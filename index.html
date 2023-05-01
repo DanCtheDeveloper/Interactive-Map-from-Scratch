@@ -17,13 +17,33 @@ crossorigin=""></script>
 <!-- Header is above, Body is below  -->
 
 <style>
-    #map {
+    #map { 
         height: 600px;
         background-color: #ccc;
+    }
+    #map::before{
+        content: 'LOADING';
+        font-size: 4em;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        margin-top: 4em;
+    }
+    .leaflet-popup-content-wrapper {
+        width: 100%;
     }
 </style>
 
 <body>
+    <form>
+        <select id="business">
+            <option value="restaurant">Restaurants</option>
+            <option value="coffee">Coffee Shops</option>
+            <option value="hotel">Hotels</option>
+            <option value="market">Markets</option>
+        </select>
+        <button id="submit">Submit</button>
+    </form>
     <div id="map"></div>
     
 </body>
